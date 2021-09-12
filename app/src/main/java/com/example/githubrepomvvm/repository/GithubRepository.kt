@@ -3,16 +3,21 @@ package com.example.githubrepomvvm.repository
 import com.example.githubrepomvvm.model.response.BaseResponse
 import com.example.githubrepomvvm.model.response.GithubOwnerResponse
 import com.example.githubrepomvvm.model.response.GithubResponse
-import com.example.githubrepomvvm.util.ApiHelper
+import com.example.githubrepomvvm.util.GithubApi
+import dagger.Module
 import io.reactivex.Single
+import javax.inject.Inject
 
 
-class GithubRepository (private val apiHelper: ApiHelper) {
-//
-//    fun getGithubService(nickName: String) : Single<BaseResponse<GithubResponse>> =
-//        apiHelper.getApiHelper(nickName)
 
-//    fun getUserGithubService(nickName: String) : Single<BaseResponse<GithubOwnerResponse>> =
-//        apiHelper.getUserApiHelper(nickName)
+class GithubRepository @Inject constructor (private val githubApi: GithubApi)  {
+
+    fun getApiHelper(nickname : String) : Single<BaseResponse<GithubResponse>>{
+        return githubApi.getSearchRepositories(nickname)
+    }
+
+
+
+
 
 }

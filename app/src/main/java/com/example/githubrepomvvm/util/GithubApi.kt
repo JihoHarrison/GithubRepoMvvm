@@ -13,6 +13,7 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 import javax.inject.Singleton
 
+
 interface GithubApi {
 
     @GET("users/{username}/repos")

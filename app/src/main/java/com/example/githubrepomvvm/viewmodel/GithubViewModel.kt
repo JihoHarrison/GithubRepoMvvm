@@ -6,13 +6,14 @@ import androidx.lifecycle.ViewModel
 import com.example.githubrepomvvm.model.response.BaseResponse
 import com.example.githubrepomvvm.model.response.GithubOwnerResponse
 import com.example.githubrepomvvm.model.response.GithubResponse
-import com.example.githubrepomvvm.util.ApiHelper
+import com.example.githubrepomvvm.repository.GithubRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class GithubViewModel(private val apiHelper: ApiHelper) :
+@HiltViewModel
+class GithubViewModel @Inject constructor(private val githubRepository: GithubRepository) :
     ViewModel() {
 
     private var _lists = MutableLiveData<BaseResponse<GithubResponse>>()
@@ -22,7 +23,7 @@ class GithubViewModel(private val apiHelper: ApiHelper) :
     val listUsers = _listUsers
 
     fun getGithubViewModel(nickName: String) {
-        apiHelper.getApiHelper(nickName).subscribeOn(Schedulers.io())
+        githubRepository.getApiHelper(nickName).subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
 
@@ -32,6 +33,7 @@ class GithubViewModel(private val apiHelper: ApiHelper) :
                 Log.e("response", "viewmodel failed to get resources")
             })
     }
+
 
 //    fun getGithubUserViewModel(nickName: String){
 //        apiHelper.getUserApiHelper(nickName).subscribeOn(Schedulers.io())
@@ -49,10 +51,6 @@ class GithubViewModel(private val apiHelper: ApiHelper) :
 
 //    fun getUserGithubViewModel(nickName: String) =
 //        githubRepository.getUserGithubService(nickName)
-
-
-
-
 
 
 }

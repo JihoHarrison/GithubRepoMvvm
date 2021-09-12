@@ -1,17 +1,14 @@
 package com.example.githubrepomvvm.viewmodel
 
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import com.example.githubrepomvvm.util.ApiHelper
 
-@Suppress("UNCHECKED_CAST")
-class GithubViewModelFactory(private val apiHelper: ApiHelper) : ViewModelProvider.Factory {
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(GithubViewModel::class.java)){
-            return GithubViewModel(apiHelper) as T
-        }
-        throw  IllegalArgumentException("Un repo")
-    }
+//@Suppress("UNCHECKED_CAST")
+//class GithubViewModelFactory(private val apiHelper: ApiHelper) : ViewModelProvider.Factory {
+//    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+//        if (modelClass.isAssignableFrom(GithubViewModel::class.java)){
+//            return GithubViewModel(apiHelper) as T
+//        }
+//        throw  IllegalArgumentException("Un repo")
+//    }
 
 //    fun showRepos(vm: GithubViewModel, intentText: String, adapter: GithubRepoAdapter) {
 //        vm.getGithubViewModel(intentText).subscribeOn(Schedulers.io())
@@ -26,5 +23,5 @@ class GithubViewModelFactory(private val apiHelper: ApiHelper) : ViewModelProvid
 //                Log.e("response", "viewmodel failed to get resources")
 //            })
 //    }
-}
+//}
 
