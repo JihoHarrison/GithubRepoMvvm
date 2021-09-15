@@ -1,4 +1,4 @@
-# Github Repository 검색 App</br>
+# Github Repository 검색 Application</br>
 </br>
 사용 언어 : Kotlin</br>
 아키텍쳐 : MVVM</br>
