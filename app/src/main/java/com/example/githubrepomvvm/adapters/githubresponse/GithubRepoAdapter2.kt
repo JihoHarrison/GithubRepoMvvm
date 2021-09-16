@@ -8,11 +8,13 @@ import com.example.githubrepomvvm.databinding.UserRepoListBinding
 import com.example.githubrepomvvm.model.response.GithubResponse
 import com.example.githubrepomvvm.model.response.GithubSubResponse
 
-class GithubRepoAdapter2(private val data : List<GithubResponse>): RecyclerView.Adapter<GithubRepoAdapter2.GithubUserViewHolder2>() {
+class GithubRepoAdapter2(private val data: List<GithubResponse>) :
+    RecyclerView.Adapter<GithubRepoAdapter2.GithubUserViewHolder2>() {
 
 
-    class GithubUserViewHolder2(val binding : RepoItemBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(data : GithubResponse){
+    class GithubUserViewHolder2(val binding: RepoItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(data: GithubResponse) {
             binding.item = data
         }
     }
