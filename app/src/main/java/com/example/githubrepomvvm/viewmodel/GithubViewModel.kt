@@ -9,6 +9,8 @@ import com.example.githubrepomvvm.model.response.GithubResponse
 import com.example.githubrepomvvm.repository.GithubRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.rxkotlin.addTo
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
@@ -31,7 +33,7 @@ class GithubViewModel @Inject constructor(private val githubRepository: GithubRe
                 _lists.postValue(it)
             }, {
                 Log.e("response", "viewmodel failed to get resources")
-            })
+            }).addTo(compositeDisposable = CompositeDisposable())
     }
 
 
