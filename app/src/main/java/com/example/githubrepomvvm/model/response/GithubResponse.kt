@@ -1,6 +1,5 @@
 package com.example.githubrepomvvm.model.response
 
-
 data class GithubResponse(
     val id : Int,
     val name : String,

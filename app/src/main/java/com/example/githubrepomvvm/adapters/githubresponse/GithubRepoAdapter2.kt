@@ -4,13 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.githubrepomvvm.databinding.RepoItemBinding
-import com.example.githubrepomvvm.databinding.UserRepoListBinding
 import com.example.githubrepomvvm.model.response.GithubResponse
-import com.example.githubrepomvvm.model.response.GithubSubResponse
 
 class GithubRepoAdapter2(private val data: List<GithubResponse>) :
     RecyclerView.Adapter<GithubRepoAdapter2.GithubUserViewHolder2>() {
-
 
     class GithubUserViewHolder2(val binding: RepoItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
