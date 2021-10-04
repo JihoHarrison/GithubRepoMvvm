@@ -18,7 +18,7 @@ class GithubViewModel @Inject constructor(private val githubRepository: GithubRe
     ViewModel() {
 
     private val _listProcessor: BehaviorProcessor<List<GithubResponse>> =
-        BehaviorProcessor.create()
+        BehaviorProcessor.createDefault(emptyList())
     val listProcessor: Flowable<List<GithubResponse>> = _listProcessor
 
     fun getGithubViewModelRx(nickName: String) {

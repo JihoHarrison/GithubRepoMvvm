@@ -38,7 +38,9 @@ class ListActivity : AppCompatActivity() {
             .subscribe(
                 {
                     adapter = GithubRepoAdapter2(it)
-                    binding.recyclerView.adapter = adapter
+                    with(binding) {
+                        recyclerView.adapter = adapter
+                    }
                     Log.d("processorhello", it.toString())
                 }, {
 
