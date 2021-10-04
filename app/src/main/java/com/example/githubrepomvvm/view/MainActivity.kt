@@ -1,9 +1,9 @@
 package com.example.githubrepomvvm.view
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.example.githubrepomvvm.R
 import com.example.githubrepomvvm.databinding.ActivityMainBinding
@@ -13,11 +13,10 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityMainBinding
-//
-    private val viewmodel : GithubViewModel by viewModels()
+    private lateinit var binding: ActivityMainBinding
+    private val viewmodel: GithubViewModel by viewModels()
 
-    companion object{
+    companion object {
         const val REPONAME = "repoName"
     }
 
@@ -25,12 +24,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         setViews()
-
-
-
     }
 
-    private fun setViews() = with(binding){
+    private fun setViews() = with(binding) {
         btnSearch.setOnClickListener {
             startActivity(
                 Intent(this@MainActivity, ListActivity::class.java).apply {
@@ -40,8 +36,6 @@ class MainActivity : AppCompatActivity() {
             )
         }
     }
-
-
 }
 
 
